@@ -13,6 +13,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <style>.active { color: red; font-weight: bolder; }</style>
   </head>
   <body ng-app="ordersApp">
     <!--[if lte IE 8]>
@@ -25,15 +26,15 @@
         <div class="container">
           <div class="navbar-header">
 
-            <a class="navbar-brand" href="#/">ordersApp</a>
+            <a class="navbar-brand" ui-sref="home">ordersApp</a>
           </div>
 
           <div class="collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+              <li><a ui-sref="about" ui-sref-active="active">About</a></li>
+              <li><a ui-sref="contact" ui-sref-active="active">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -41,7 +42,7 @@
     </div>
 
     <div class="container">
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+        <div ui-view></div>
     </div>
 
     <div class="footer">
@@ -51,26 +52,17 @@
     </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/mainCtrl.js"></script>
+    <!-- endbuild -->
+
 </body>
 </html>
