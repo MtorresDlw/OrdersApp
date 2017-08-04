@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('ordersApp', ['ui.router'])
+  .module('ordersApp', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap'])
   .config(function($stateProvider) {
 
     $stateProvider
@@ -27,6 +27,6 @@ angular
             url: '/about',
             templateUrl: 'views/about.html',
             controller: 'aboutCtrl'
-        })
+        });
 
 });
