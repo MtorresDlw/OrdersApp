@@ -29,4 +29,6 @@ angular
             controller: 'aboutCtrl'
         });
 
+    $state.go('home');
+
 });
